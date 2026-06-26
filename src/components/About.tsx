@@ -22,7 +22,7 @@ useEffect(() => {
         }
     },
     {
-      threshold: 0.3,
+      threshold: 0.45,
     }
   );
 
@@ -41,13 +41,13 @@ return (
     bg-[#f8f5f0]
     py-20
     transition-all
-    duration-700
-    ease-[cubic-bezier(.22,1,.36,1)]
+    duration-[900ms]
+    ease-[cubic-bezier(.19,1,.22,1)]
     will-change-transform
     ${
       showSection
         ? "opacity-100 translate-y-0 scale-100 blur-0"
-        : "opacity-0 translate-y-12 scale-[0.98] blur-sm"
+        : "opacity-0 translate-y-16 scale-95 blur-md"
     }
   `}
 >
