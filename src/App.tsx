@@ -45,6 +45,8 @@ return (
 
     <Navbar onInquireClick={scrollToContact} />
 
+    <StickyGift />
+
       <Hero
         onDiscoverClick={() => {
           const section = document.getElementById("collections");
