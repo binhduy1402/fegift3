@@ -11,6 +11,7 @@ import Workflow from "./components/Workflow";
 import Capabilities from "./components/Capabilities";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
+import Reveal from "./components/Reveal";
 
 import { Collection } from "./types";
 import { X, Check, ArrowRight, ShieldCheck } from "lucide-react";
@@ -77,7 +78,9 @@ return (
         onConsultClick={scrollToContact}
       />
 
-      <About />
+      <Reveal>
+        <About />
+      </Reveal>
 
       <Collections
         onSelectCollection={setSelectedCollection}
