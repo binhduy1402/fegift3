@@ -134,20 +134,49 @@
 }
 
 /* ==========================
-   SCROLL REVEAL
+   REVEAL ANIMATION SYSTEM
 ========================== */
 
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translate3d(0, 40px, 0) scale(.98);
+
+  will-change: transform, opacity;
+
   transition:
-    opacity 0.8s ease,
-    transform 0.8s ease;
+    opacity .8s cubic-bezier(.22,1,.36,1),
+    transform .8s cubic-bezier(.22,1,.36,1);
 }
 
 .reveal.show {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate3d(0,0,0) scale(1);
+}
+
+@media (max-width:768px){
+
+  .reveal{
+
+    transform:translate3d(0,24px,0);
+
+    transition-duration:.6s;
+
+  }
+
+}
+
+@media (prefers-reduced-motion:reduce){
+
+  .reveal{
+
+    opacity:1;
+
+    transform:none;
+
+    transition:none;
+
+  }
+
 }
 
 @keyframes marquee {
