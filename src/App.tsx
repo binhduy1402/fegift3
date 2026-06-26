@@ -11,6 +11,7 @@ import Workflow from "./components/Workflow";
 import Capabilities from "./components/Capabilities";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
+import StickySection from "./components/StickySection";
 
 
 import { Collection } from "./types";
