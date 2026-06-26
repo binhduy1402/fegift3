@@ -11,7 +11,6 @@ import Workflow from "./components/Workflow";
 import Capabilities from "./components/Capabilities";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
-import Reveal from "./components/Reveal";
 
 import { Collection } from "./types";
 import { X, Check, ArrowRight, ShieldCheck } from "lucide-react";
@@ -19,28 +18,6 @@ import { X, Check, ArrowRight, ShieldCheck } from "lucide-react";
 export default function App() {
   const [selectedCollection, setSelectedCollection] =
     useState<Collection | null>(null);
-
-  const [prefilledProduct, setPrefilledProduct] = useState("");
-  useEffect(() => {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    },
-    {
-      threshold: 0.15,
-    }
-  );
-
-  document.querySelectorAll(".reveal").forEach((el) => {
-    observer.observe(el);
-  });
-
-  return () => observer.disconnect();
-}, []);
 
   const scrollToContact = () => {
     const section = document.getElementById("contact");
@@ -78,9 +55,7 @@ return (
         onConsultClick={scrollToContact}
       />
 
-      <Reveal>
         <About />
-      </Reveal>
 
       <Collections
         onSelectCollection={setSelectedCollection}
