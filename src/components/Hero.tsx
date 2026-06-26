@@ -11,14 +11,14 @@ export default function Hero({
   onConsultClick,
 }: HeroProps) {
   return (
-    <section className="gold-pattern relative overflow-hidden bg-gradient-to-b from-[#faf7f2] via-[#faf7f2] to-white pt-24 pb-20 md:pt-36 md:pb-28">
+    <section className="gold-pattern relative flex h-full min-h-screen items-center overflow-hidden bg-gradient-to-b from-[#faf7f2] via-[#faf7f2] to-white pt-24">
       
       {/* Background Effects */}
       <div className="absolute left-[-10%] top-1/2 h-[35rem] w-[35rem] -translate-y-1/2 rounded-full bg-[#7c142b]/5 blur-3xl pointer-events-none" />
       <div className="absolute right-[-5%] top-0 h-[30rem] w-[30rem] rounded-full bg-[#d4af37]/10 blur-3xl pointer-events-none" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
+      <div className="relative z-10 mx-auto flex h-full w-full max-w-7xl items-center px-4 sm:px-6 lg:px-8">
+        <div className="grid w-full items-center gap-12 lg:grid-cols-12 lg:gap-10">
 
           {/* Left Content */}
           <div className="lg:col-span-6">
