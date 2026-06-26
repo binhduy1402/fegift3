@@ -11,7 +11,7 @@ import Workflow from "./components/Workflow";
 import Capabilities from "./components/Capabilities";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
-import StickyGift from "./components/StickyGift";
+
 
 import { Collection } from "./types";
 import { X, Check, ArrowRight, ShieldCheck } from "lucide-react";
@@ -44,8 +44,6 @@ return (
     <LuxuryBackground />
 
     <Navbar onInquireClick={scrollToContact} />
-
-    <StickyGift />
 
       <Hero
         onDiscoverClick={() => {
