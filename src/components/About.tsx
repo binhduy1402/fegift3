@@ -4,27 +4,21 @@ import CountUp from "./CountUp";
 
 export default function About() {
 
-const sectionRef = useRef<HTMLElement>(null);
-const [startCount, setStartCount] = useState(false);
 const [showSection, setShowSection] = useState(false);
 
+const sectionRef = useRef<HTMLElement>(null);
+
+const [startCount, setStartCount] = useState(false);
+
 useEffect(() => {
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-        if (entry.isIntersecting) {
-          setShowSection(true);
-        
-          setTimeout(() => {
-            setStartCount(true);
-          }, 350);
-        
-          observer.disconnect();
-        }
-    },
-    {
-      threshold: 0.45,
+  const observer = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) {
+      setStartCount(true);
+      observer.disconnect();
     }
-  );
+  }, {
+    threshold: 0.45,
+  });
 
   if (sectionRef.current) {
     observer.observe(sectionRef.current);
@@ -37,23 +31,11 @@ return (
 <section
   ref={sectionRef}
   id="our-story"
-  className={`
-    bg-[#f8f5f0]
-    py-20
-    transition-all
-    duration-[900ms]
-    ease-[cubic-bezier(.19,1,.22,1)]
-    will-change-transform
-    ${
-      showSection
-        ? "opacity-100 translate-y-0 scale-100 blur-0"
-        : "opacity-0 translate-y-16 scale-95 blur-md"
-    }
-  `}
+  className="bg-[#f8f5f0] py-20"
 >
 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <div className="reveal text-center mb-14">
+    <div className="text-center mb-14">
       <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#7c142b]">
         NĂNG LỰC THỰC TẾ
       </span>
