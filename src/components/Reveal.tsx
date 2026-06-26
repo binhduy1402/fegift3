@@ -17,9 +17,15 @@ export default function Reveal({
   return (
     <div
       ref={ref}
-      className={`reveal ${visible ? "show" : ""} ${className}`}
+      className={className}
       style={{
-        transitionDelay: `${delay}ms`,
+        opacity: visible ? 1 : 0,
+        transform: visible
+          ? "translate3d(0,0,0)"
+          : "translate3d(0,40px,0)",
+        transition: `opacity .8s cubic-bezier(.22,1,.36,1) ${delay}ms,
+                     transform .8s cubic-bezier(.22,1,.36,1) ${delay}ms`,
+        willChange: "transform, opacity",
       }}
     >
       {children}
