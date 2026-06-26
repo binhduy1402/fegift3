@@ -35,7 +35,7 @@ return (
 >
 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-    <div className="text-center mb-14">
+    <div className="reveal text-center mb-14">
       <span className="text-[11px] font-bold tracking-[0.25em] uppercase text-[#7c142b]">
         NĂNG LỰC THỰC TẾ
       </span>
