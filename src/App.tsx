@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import LuxuryBackground from "./components/LuxuryBackground";
 
@@ -18,6 +18,8 @@ import { X, Check, ArrowRight, ShieldCheck } from "lucide-react";
 export default function App() {
   const [selectedCollection, setSelectedCollection] =
     useState<Collection | null>(null);
+  
+  const [prefilledProduct, setPrefilledProduct] = useState("");
 
   const scrollToContact = () => {
     const section = document.getElementById("contact");
