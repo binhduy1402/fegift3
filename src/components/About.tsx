@@ -6,14 +6,20 @@ export default function About() {
 
 const sectionRef = useRef<HTMLElement>(null);
 const [startCount, setStartCount] = useState(false);
+const [showSection, setShowSection] = useState(false);
 
 useEffect(() => {
   const observer = new IntersectionObserver(
     ([entry]) => {
-      if (entry.isIntersecting) {
-        setStartCount(true);
-        observer.disconnect();
-      }
+        if (entry.isIntersecting) {
+          setShowSection(true);
+        
+          setTimeout(() => {
+            setStartCount(true);
+          }, 350);
+        
+          observer.disconnect();
+        }
     },
     {
       threshold: 0.3,
@@ -31,7 +37,19 @@ return (
 <section
   ref={sectionRef}
   id="our-story"
-  className="bg-[#f8f5f0] py-20"
+  className={`
+    bg-[#f8f5f0]
+    py-20
+    transition-all
+    duration-700
+    ease-[cubic-bezier(.22,1,.36,1)]
+    will-change-transform
+    ${
+      showSection
+        ? "opacity-100 translate-y-0 scale-100 blur-0"
+        : "opacity-0 translate-y-12 scale-[0.98] blur-sm"
+    }
+  `}
 >
 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -59,7 +77,6 @@ return (
             transitionDelay: `${index * 120}ms`,
           }}
             className="
-              reveal
               premium-card
               p-8
               text-center
