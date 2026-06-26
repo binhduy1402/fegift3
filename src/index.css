@@ -255,4 +255,18 @@
 
     z-index:0;
 }
+.section-wrapper {
+  position: relative;
+  height: 180vh;
+}
+
+.sticky-section {
+  position: sticky;
+  top: 0;
+
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+}
 }
