@@ -11,7 +11,7 @@ import Workflow from "./components/Workflow";
 import Capabilities from "./components/Capabilities";
 import ContactForm from "./components/ContactForm";
 import Footer from "./components/Footer";
-import StickySection from "./components/StickySection";
+import StickyWrapper from "./components/StickyWrapper";
 
 
 import { Collection } from "./types";
@@ -40,36 +40,48 @@ export default function App() {
   };
 
 return (
-  <div className="relative min-h-screen overflow-hidden bg-cream-bg text-charcoal-text selection:bg-primary-brand selection:text-white">
+  <div className="relative min-h-screen bg-cream-bg text-charcoal-text selection:bg-primary-brand selection:text-white">
 
     <LuxuryBackground />
 
     <Navbar onInquireClick={scrollToContact} />
 
-      <Hero
-        onDiscoverClick={() => {
-          const section = document.getElementById("collections");
+      <StickyWrapper height={180}>
+  <Hero
+    onDiscoverClick={() => {
+      const section = document.getElementById("collections");
 
-          if (section) {
-            section.scrollIntoView({
-              behavior: "smooth",
-            });
-          }
-        }}
-        onConsultClick={scrollToContact}
-      />
+      if (section) {
+        section.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    }}
+    onConsultClick={scrollToContact}
+  />
+</StickyWrapper>
 
-        <About />
+<StickyWrapper height={180}>
+  <About />
+</StickyWrapper>
 
-      <Collections
-        onSelectCollection={setSelectedCollection}
-      />
+<StickyWrapper height={300}>
+  <Collections
+    onSelectCollection={setSelectedCollection}
+  />
+</StickyWrapper>
 
-      <Philosophy />
+<StickyWrapper height={180}>
+  <Philosophy />
+</StickyWrapper>
 
-      <Capabilities />
+<StickyWrapper height={220}>
+  <Capabilities />
+</StickyWrapper>
 
-      <Workflow />
+<StickyWrapper height={180}>
+  <Workflow />
+</StickyWrapper>
 
       <ContactForm
         prefilledProduct={prefilledProduct}
