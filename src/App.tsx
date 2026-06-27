@@ -40,24 +40,21 @@ export default function App() {
 
 return (
   <div className="relative min-h-screen bg-cream-bg text-charcoal-text selection:bg-primary-brand selection:text-white">
-
     <LuxuryBackground />
 
     <Navbar onInquireClick={scrollToContact} />
 
-      <StickyWrapper height={180}>
-  <Hero
-    onDiscoverClick={() => {
-      const section = document.getElementById("collections");
-
-      if (section) {
-        section.scrollIntoView({
-          behavior: "smooth",
-        });
-      }
-    }}
-    onConsultClick={scrollToContact}
-  />
+    <Hero
+      onDiscoverClick={() => {
+        const section = document.getElementById("collections");
+        if (section) {
+          section.scrollIntoView({
+            behavior: "smooth",
+          });
+        }
+      }}
+      onConsultClick={scrollToContact}
+    />
         
   <About />
 
