@@ -58,29 +58,18 @@ return (
     }}
     onConsultClick={scrollToContact}
   />
-</StickyWrapper>
-
-<StickyWrapper height={180}>
+        
   <About />
-</StickyWrapper>
 
-<StickyWrapper height={300}>
   <Collections
     onSelectCollection={setSelectedCollection}
   />
-</StickyWrapper>
 
-<StickyWrapper height={180}>
   <Philosophy />
-</StickyWrapper>
 
-<StickyWrapper height={220}>
   <Capabilities />
-</StickyWrapper>
 
-<StickyWrapper height={180}>
   <Workflow />
-</StickyWrapper>
 
       <ContactForm
         prefilledProduct={prefilledProduct}
